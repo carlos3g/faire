@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { Home } from '@screens';
+import Navigation from '@navigation';
 
 function Main() {
   return (
     <>
-      <Home />
+      <Navigation />
       <StatusBar translucent style="light" />
     </>
   );
