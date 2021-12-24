@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Faire",
+    "slug": "faire",
+    "version": "1.0.0",
+    "githubUrl": "https://github.com/carlos3g/faire",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "backgroundColor": "#0F0D19",
+    "userInterfaceStyle": "dark",
+    "primaryColor": "#28DF99",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F0D19"
+    },
+    "updates": {
+      "enabled": false
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0F0D19"
+      }
+    },
+    "androidStatusBar": {
+      "barStyle": "dark-content",
+      "translucent": true
+    },
+    "androidNavigationBar": {
+      "visible": "sticky-immersive",
+      "barStyle": "light-content",
+      "backgroundColor": "#0F0D19"
+    }
+  }
+}
