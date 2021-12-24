@@ -9,7 +9,8 @@
       "@components": ["./src/components"],
       "@screens": ["./src/screens"],
       "@services": ["./src/services"],
-      "@styles": ["./src/styles"]
+      "@styles": ["./src/styles"],
+      "@types": ["./src/types.ts"]
     }
   },
   "exclude": ["node_modules", "build", "dist"]

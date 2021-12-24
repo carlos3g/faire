@@ -23,6 +23,10 @@ const importOptions = {
       rootPathSuffix: './src/styles',
       rootPathPrefix: '@styles',
     },
+    {
+      rootPathSuffix: './src/types.ts',
+      rootPathPrefix: '@types',
+    },
   ],
 };
 
