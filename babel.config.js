@@ -4,6 +4,10 @@ const importOptions = {
       rootPathSuffix: './src',
     },
     {
+      rootPathSuffix: './src/assets',
+      rootPathPrefix: '@assets',
+    },
+    {
       rootPathSuffix: './src/navigation',
       rootPathPrefix: '@navigation',
     },

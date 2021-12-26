@@ -5,6 +5,7 @@
     "baseUrl": ".",
     "paths": {
       "~": ["./src"],
+      "@assets": ["./src/assets"],
       "@navigation": ["./src/navigation"],
       "@components": ["./src/components"],
       "@screens": ["./src/screens"],
