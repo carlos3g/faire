@@ -2,12 +2,12 @@ export default {
   title: {
     fontFamily: 'PoppinsSemiBold',
     fontSize: 29,
-    lineHeight: 51,
+    lineHeight: 43.5,
   },
   subtitle: {
     fontFamily: 'PoppinsRegular',
-    fontSize: 28,
-    lineHeight: 42,
+    fontSize: 26,
+    lineHeight: 39,
   },
   text: {
     fontFamily: 'PoppinsRegular',

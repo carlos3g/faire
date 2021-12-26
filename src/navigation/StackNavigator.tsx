@@ -23,8 +23,8 @@ function StackNavigator() {
         name="Onboard"
         options={{ headerShown: false }}
       />
-      <Screen component={Login} name="Login" />
-      <Screen component={SignUp} name="SignUp" />
+      <Screen component={Login} name="Login" options={{ title: '' }} />
+      <Screen component={SignUp} name="SignUp" options={{ title: '' }} />
     </Navigator>
   );
 }
