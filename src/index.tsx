@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import AppLoading from 'expo-app-loading';
-import { useFonts } from 'expo-font';
-import Navigation from '@navigation';
 import {
   Poppins_400Regular,
   Poppins_500Medium,
   Poppins_600SemiBold,
 } from '@expo-google-fonts/poppins';
+import Navigation from '@navigation';
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
+import { StatusBar } from 'expo-status-bar';
+import { AuthProvider } from '@providers';
 
 function Main() {
   let [fontsLoaded] = useFonts({
@@ -20,10 +21,10 @@ function Main() {
   }
 
   return (
-    <>
+    <AuthProvider>
       <Navigation />
       <StatusBar translucent style="light" />
-    </>
+    </AuthProvider>
   );
 }
 

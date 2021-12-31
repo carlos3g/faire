@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
-import { RootStackParamList } from '@types';
 import { Button, Input } from '@components';
-import { Container, Title, SubTitle, SignUpText, Text } from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { auth } from '@services';
+import { RootStackParamList } from '@types';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useCallback, useState } from 'react';
+import { Container, SignUpText, SubTitle, Text, Title } from './styles';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -15,10 +17,9 @@ function Login() {
   const [password, setPassword] = useState<string>('');
   const { navigate } = useNavigation<LoginScreenNavigationProp>();
 
-  function handleLogin(): void {
-    console.log(email);
-    console.log(password);
-  }
+  const handleLogin = useCallback(() => {
+    signInWithEmailAndPassword(auth, email, password);
+  }, [auth, email, password]);
 
   return (
     <Container>

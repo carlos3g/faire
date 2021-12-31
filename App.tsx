@@ -1,7 +1,10 @@
+import { LogBox } from 'react-native';
 import Main from './src';
 
-function App() {
-  return <Main />;
-}
+LogBox.ignoreLogs([
+  'AsyncStorage has been extracted from react-native core and will be removed in a future release',
+]);
+
+const App = () => <Main />;
 
 export default App;

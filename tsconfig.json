@@ -8,6 +8,8 @@
       "@assets": ["./src/assets"],
       "@navigation": ["./src/navigation"],
       "@components": ["./src/components"],
+      "@hooks": ["./src/hooks"],
+      "@providers": ["./src/providers"],
       "@screens": ["./src/screens"],
       "@services": ["./src/services"],
       "@styles": ["./src/styles"],

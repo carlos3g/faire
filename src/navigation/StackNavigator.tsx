@@ -1,13 +1,25 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import BottomTabsNavigator from './BottomTabNavigator';
-import { Onboard, Login, SignUp } from '@screens';
-import { RootStackParamList } from '@types';
+import { Login, Onboard, SignUp } from '@screens';
+import { auth } from '@services';
 import { colors } from '@styles';
+import { RootStackParamList } from '@types';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useContext, useEffect } from 'react';
+import { AuthContext } from '@providers';
+import BottomTabsNavigator from './BottomTabNavigator';
 
 const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();
 
 function StackNavigator() {
-  const isLoggedIn: boolean = true;
+  const { user, setUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (aUser) => {
+      aUser ? setUser(aUser) : setUser(null);
+    });
+
+    return unsubscribe;
+  }, [user]);
 
   return (
     <Navigator
@@ -18,7 +30,7 @@ function StackNavigator() {
         title: '',
       }}
     >
-      {isLoggedIn ? (
+      {user ? (
         <Screen
           component={BottomTabsNavigator}
           name="TabsNavigator"
