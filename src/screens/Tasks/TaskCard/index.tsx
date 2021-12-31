@@ -1,17 +1,20 @@
+import { db } from '@services';
 import { ITask } from '@types';
+import { User } from 'firebase/auth';
+import { deleteDoc, doc } from 'firebase/firestore';
 import { useCallback } from 'react';
 import { CheckBox, Container, PriorityIndicator, Title } from './styles';
 
 type TaskCardProps = {
   task: ITask;
-  tasksSetter: (callback: (pS: ITask[]) => ITask[]) => void;
+  user: User;
 };
 
-function TaskCard({ task, tasksSetter }: TaskCardProps): JSX.Element {
-  const handleTaskCheck = useCallback(
-    () => tasksSetter((pS) => pS.filter(({ id }) => id !== task.id)),
-    []
-  );
+function TaskCard({ task, user }: TaskCardProps): JSX.Element {
+  const handleTaskCheck = useCallback(() => {
+    const docRef = doc(db, user.uid, String(task.id));
+    deleteDoc(docRef);
+  }, []);
 
   return (
     <Container>

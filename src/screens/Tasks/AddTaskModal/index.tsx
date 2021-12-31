@@ -1,27 +1,28 @@
 import { Button, Input } from '@components';
+import { db } from '@services';
 import { ITask } from '@types';
+import { User } from 'firebase/auth';
+import { addDoc, collection } from 'firebase/firestore';
 import { useCallback, useState } from 'react';
 import { Modal, ModalProps } from 'react-native';
 import { Content, Overlay, Title } from './styles';
 
 interface IModalProps extends ModalProps {
-  tasksSetter: (callback: (pS: ITask[]) => ITask[]) => void;
+  user: User;
 }
 
-function AddTaskModal({ onRequestClose, tasksSetter, ...rest }: IModalProps) {
+function AddTaskModal({ onRequestClose, user, ...rest }: IModalProps) {
   const [title, setTitle] = useState<string>('');
   const [priority, setPriority] = useState<string>('');
 
-  const handleAddTask = useCallback(() => {
-    const newTask: ITask = {
-      id: Date.now(),
+  const handleAddTask = useCallback(async () => {
+    await addDoc(collection(db, user.uid), {
       priority: Number(priority) as ITask['priority'],
       title,
-    };
+    });
 
     setTitle('');
     setPriority('');
-    tasksSetter((pS) => [...pS, newTask]);
   }, [priority, title]);
 
   return (

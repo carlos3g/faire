@@ -1,9 +1,7 @@
 import { LogBox } from 'react-native';
 import Main from './src';
 
-LogBox.ignoreLogs([
-  'AsyncStorage has been extracted from react-native core and will be removed in a future release',
-]);
+LogBox.ignoreLogs(['AsyncStorage has been extracted', 'Setting a timer']);
 
 const App = () => <Main />;
 

@@ -11,7 +11,7 @@ export type TabsParamList = {
 };
 
 export interface ITask {
-  id: number;
+  id: string;
   priority: 0 | 1 | 2;
   title: string;
 }
