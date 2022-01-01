@@ -1,4 +1,4 @@
-export type RootStackParamList = {
+export type AuthStackParams = {
   Onboard: undefined;
   Login: undefined;
   SignUp: undefined;

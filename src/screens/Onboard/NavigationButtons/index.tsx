@@ -1,15 +1,12 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
-import { Container, Button, Label } from './styles';
-import { RootStackParamList } from '@types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { AuthStackParams } from '@types';
+import { Button, Container, Label } from './styles';
 
-type OnboardScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'Onboard'
->;
+type NavigationProp = NativeStackNavigationProp<AuthStackParams, 'Onboard'>;
 
 function NavigationButtons() {
-  const { navigate } = useNavigation<OnboardScreenNavigationProp>();
+  const { navigate } = useNavigation<NavigationProp>();
 
   return (
     <Container>
