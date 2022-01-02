@@ -3,11 +3,11 @@ import {
   Poppins_500Medium,
   Poppins_600SemiBold,
 } from '@expo-google-fonts/poppins';
-import Navigation from '@navigation';
+import { RootNavigator } from '@navigation';
+import { AuthProvider } from '@providers';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { AuthProvider } from '@providers';
 
 function Main() {
   let [fontsLoaded] = useFonts({
@@ -22,7 +22,7 @@ function Main() {
 
   return (
     <AuthProvider>
-      <Navigation />
+      <RootNavigator />
       <StatusBar translucent style="light" />
     </AuthProvider>
   );

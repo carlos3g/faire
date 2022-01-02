@@ -5,7 +5,7 @@ export type AuthStackParams = {
   TabsNavigator: undefined;
 };
 
-export type TabsParamList = {
+export type TabsParams = {
   Account: undefined;
   Tasks: undefined;
 };
