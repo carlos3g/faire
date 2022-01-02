@@ -5,12 +5,12 @@
     "version": "1.0.0",
     "githubUrl": "https://github.com/carlos3g/faire",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/images/icon.png",
     "backgroundColor": "#0F0D19",
     "userInterfaceStyle": "dark",
     "primaryColor": "#28DF99",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#0F0D19"
     },
@@ -23,7 +23,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/images/adaptive-icon.png",
         "backgroundColor": "#0F0D19"
       }
     },
