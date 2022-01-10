@@ -40,5 +40,5 @@ export const Text = styled.Text`
 `;
 
 export const LoginText = styled.Text`
-  font-family: PoppinsSemiBold;
+  font-family: poppinsSemiBold;
 `;

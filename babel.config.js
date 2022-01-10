@@ -2,6 +2,7 @@ const importOptions = {
   paths: [
     {
       rootPathSuffix: './src',
+      rootPathPrefix: '~',
     },
     {
       rootPathSuffix: './src/assets',

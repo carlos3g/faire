@@ -3,7 +3,7 @@ import { db } from '@services';
 import { ITask } from '@types';
 import { User } from 'firebase/auth';
 import { addDoc, collection } from 'firebase/firestore';
-import { useCallback, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { Modal, ModalProps } from 'react-native';
 import { Content, Overlay, Title } from './styles';
 
@@ -11,25 +11,26 @@ interface IModalProps extends ModalProps {
   user: User;
 }
 
-function AddTaskModal({ onRequestClose, user, ...rest }: IModalProps) {
+const AddTaskModal: FC<IModalProps> = ({ onRequestClose, user, ...rest }) => {
   const [title, setTitle] = useState<string>('');
   const [priority, setPriority] = useState<string>('');
 
   const handleAddTask = useCallback(async () => {
     await addDoc(collection(db, user.uid), {
-      priority: Number(priority) as ITask['priority'],
+      priority: priority as unknown as ITask['priority'],
       title,
     });
 
     setTitle('');
     setPriority('');
-  }, [priority, title]);
+  }, [priority, title, user]);
 
   return (
     <Modal
       animationType="slide"
       transparent
       onRequestClose={onRequestClose}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <Overlay onPress={onRequestClose} />
@@ -54,6 +55,6 @@ function AddTaskModal({ onRequestClose, user, ...rest }: IModalProps) {
       </Content>
     </Modal>
   );
-}
+};
 
 export default AddTaskModal;

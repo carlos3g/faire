@@ -3,6 +3,11 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "strictFunctionTypes": true,
     "paths": {
       "~": ["./src"],
       "@assets": ["./src/assets"],
@@ -16,5 +21,5 @@
       "@types": ["./src/types.ts"]
     }
   },
-  "exclude": ["node_modules", "build", "dist"]
+  "exclude": ["node_modules", "babel.config.js"]
 }

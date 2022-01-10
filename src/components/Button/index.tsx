@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+import { FC } from 'react';
 import { PressableProps } from 'react-native';
 import { Container, Label } from './styles';
 
@@ -5,12 +7,10 @@ interface IButtonProps extends PressableProps {
   label: string;
 }
 
-function Button({ label, ...rest }: IButtonProps): JSX.Element {
-  return (
-    <Container {...rest}>
-      <Label>{label}</Label>
-    </Container>
-  );
-}
+const Button: FC<IButtonProps> = ({ label, ...rest }) => (
+  <Container {...rest}>
+    <Label>{label}</Label>
+  </Container>
+);
 
 export default Button;

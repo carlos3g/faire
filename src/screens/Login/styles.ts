@@ -41,5 +41,5 @@ export const Text = styled.Text`
 `;
 
 export const SignUpText = styled.Text`
-  font-family: PoppinsSemiBold;
+  font-family: poppinsSemiBold;
 `;

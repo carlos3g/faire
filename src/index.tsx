@@ -8,12 +8,13 @@ import { AuthProvider } from '@providers';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
+import { FC } from 'react';
 
-function Main() {
-  let [fontsLoaded] = useFonts({
-    PoppinsRegular: Poppins_400Regular,
-    PoppinsMedium: Poppins_500Medium,
-    PoppinsSemiBold: Poppins_600SemiBold,
+const Main: FC = () => {
+  const [fontsLoaded] = useFonts({
+    poppinsRegular: Poppins_400Regular,
+    poppinsMedium: Poppins_500Medium,
+    poppinsSemiBold: Poppins_600SemiBold,
   });
 
   if (!fontsLoaded) {
@@ -26,6 +27,6 @@ function Main() {
       <StatusBar translucent style="light" />
     </AuthProvider>
   );
-}
+};
 
 export default Main;
