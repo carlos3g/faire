@@ -4,7 +4,7 @@ import { auth } from '@services';
 import { colors } from '@styles';
 import { onAuthStateChanged } from 'firebase/auth';
 import { tint } from 'polished';
-import { useContext, useEffect } from 'react';
+import { FC, useContext, useEffect } from 'react';
 import AppNavigator from './AppNavigator';
 import AuthNavigator from './AuthNavigator';
 
@@ -20,16 +20,16 @@ const NavigationTheme: Theme = {
   },
 };
 
-function RootNavigator() {
+const RootNavigator: FC = () => {
   const { user, setUser } = useContext(AuthContext);
 
-  useEffect(() => onAuthStateChanged(auth, (u) => setUser(u ? u : null)), []);
+  useEffect(() => onAuthStateChanged(auth, (u) => setUser(u)), [setUser]);
 
   return (
     <NavigationContainer theme={NavigationTheme}>
       {user ? <AppNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
-}
+};
 
 export { RootNavigator };

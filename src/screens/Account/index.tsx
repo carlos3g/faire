@@ -1,11 +1,10 @@
+import { FC } from 'react';
 import { Container, Text } from './styles';
 
-function Account() {
-  return (
-    <Container>
-      <Text>Account</Text>
-    </Container>
-  );
-}
+const Account: FC = () => (
+  <Container>
+    <Text>Account</Text>
+  </Container>
+);
 
 export default Account;

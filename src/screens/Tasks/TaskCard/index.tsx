@@ -2,7 +2,7 @@ import { db } from '@services';
 import { ITask } from '@types';
 import { User } from 'firebase/auth';
 import { deleteDoc, doc } from 'firebase/firestore';
-import { useCallback } from 'react';
+import { FC, useCallback } from 'react';
 import { CheckBox, Container, PriorityIndicator, Title } from './styles';
 
 type TaskCardProps = {
@@ -10,11 +10,11 @@ type TaskCardProps = {
   user: User;
 };
 
-function TaskCard({ task, user }: TaskCardProps): JSX.Element {
-  const handleTaskCheck = useCallback(() => {
-    const docRef = doc(db, user.uid, String(task.id));
-    deleteDoc(docRef);
-  }, []);
+const TaskCard: FC<TaskCardProps> = ({ task, user }) => {
+  const handleTaskCheck = useCallback(async () => {
+    const docRef = doc(db, user.uid, task.id);
+    await deleteDoc(docRef);
+  }, [task, user]);
 
   return (
     <Container>
@@ -23,6 +23,6 @@ function TaskCard({ task, user }: TaskCardProps): JSX.Element {
       <PriorityIndicator level={task.priority} />
     </Container>
   );
-}
+};
 
 export default TaskCard;

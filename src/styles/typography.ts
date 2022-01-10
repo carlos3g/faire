@@ -1,26 +1,26 @@
 export default {
   title: {
-    fontFamily: 'PoppinsSemiBold',
+    fontFamily: 'poppinsSemiBold',
     fontSize: 29,
     lineHeight: 43.5,
   },
   subtitle: {
-    fontFamily: 'PoppinsRegular',
+    fontFamily: 'poppinsRegular',
     fontSize: 26,
     lineHeight: 39,
   },
   text: {
-    fontFamily: 'PoppinsRegular',
+    fontFamily: 'poppinsRegular',
     fontSize: 16,
     lineHeight: 24,
   },
   button: {
-    fontFamily: 'PoppinsMedium',
+    fontFamily: 'poppinsMedium',
     fontSize: 16,
     lineHeight: 24,
   },
   headerTitle: {
-    fontFamily: 'PoppinsMedium',
+    fontFamily: 'poppinsMedium',
     fontSize: 20,
     lineHeight: 30,
   },

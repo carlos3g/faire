@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '@styles';
-import { ITask } from '@types';
 
 export const Container = styled.View`
   flex: 1;

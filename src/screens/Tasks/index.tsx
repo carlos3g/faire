@@ -2,39 +2,39 @@ import { AuthContext } from '@providers';
 import { db } from '@services';
 import { ITask } from '@types';
 import { collection, onSnapshot } from 'firebase/firestore';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { FC, useCallback, useContext, useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
 import AddTaskModal from './AddTaskModal';
 import { AddIcon, Container, Divider, Fab } from './styles';
 import TaskCard from './TaskCard';
 
-function Tasks() {
+const Tasks: FC = () => {
   const [visible, setVisible] = useState<boolean>(false);
   const [tasks, setTasks] = useState<ITask[]>([]);
   const { user } = useContext(AuthContext);
 
   const closeModal = useCallback(() => setVisible(false), []);
   const openModal = useCallback(() => setVisible(true), []);
+  const renderDivider = useCallback(() => <Divider />, []);
 
-  useEffect(
-    useCallback(() => {
-      const unsubscribe = onSnapshot(collection(db, user.uid), (query) => {
-        const t: any[] = [];
-        query.forEach((doc) => t.push({ ...doc.data(), id: doc.id }));
-        setTasks(t);
-      });
+  const setSnapshotListener = useCallback(() => {
+    const collRef = collection(db, user.uid);
 
-      return unsubscribe;
-    }, []),
-    []
-  );
+    return onSnapshot(collRef, (s) => {
+      const t: any[] = [];
+      s.forEach((doc) => t.push({ ...doc.data(), id: doc.id }));
+      setTasks(t);
+    });
+  }, [user]);
+
+  useEffect(() => setSnapshotListener(), [setSnapshotListener]);
 
   return (
     <Container>
       <FlatList
         data={tasks}
         renderItem={({ item }) => <TaskCard user={user} task={item} />}
-        ItemSeparatorComponent={() => <Divider />}
+        ItemSeparatorComponent={renderDivider}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ padding: 16, paddingTop: 40 }}
       />
@@ -46,6 +46,6 @@ function Tasks() {
       </Fab>
     </Container>
   );
-}
+};
 
 export default Tasks;

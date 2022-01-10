@@ -3,19 +3,19 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { auth } from '@services';
 import { AuthStackParams } from '@types';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useCallback, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { Container, SignUpText, SubTitle, Text, Title } from './styles';
 
 type Props = NativeStackScreenProps<AuthStackParams, 'Login'>;
 
-function Login({ navigation }: Props) {
+const Login: FC<Props> = ({ navigation }) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const { navigate } = navigation;
 
-  const handleLogin = useCallback(() => {
-    signInWithEmailAndPassword(auth, email, password);
-  }, [auth, email, password]);
+  const handleLogin = useCallback(async () => {
+    await signInWithEmailAndPassword(auth, email, password);
+  }, [email, password]);
 
   return (
     <Container>
@@ -44,6 +44,6 @@ function Login({ navigation }: Props) {
       </Text>
     </Container>
   );
-}
+};
 
 export default Login;
