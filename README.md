@@ -33,6 +33,8 @@ sobre react-native, typescript e firebase (seguindo o airbnb style guide e vári
 
 O Design do APP foi feito por mim, no Figma. Você pode encontrá-lo [aqui](https://www.figma.com/file/jiggpQrS9wyZ0YQ8DCwqft/Faire).
 
+![Scene](https://user-images.githubusercontent.com/52337966/148848186-6bc21a7b-c844-4e32-b026-f8f9eb97f997.png)
+
 ### 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
