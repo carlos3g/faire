@@ -5,10 +5,10 @@ import {
 } from '@expo-google-fonts/poppins';
 import { RootNavigator } from '@navigation';
 import { AuthProvider } from '@providers';
-import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 const Main: FC = () => {
   const [fontsLoaded] = useFonts({
@@ -17,8 +17,20 @@ const Main: FC = () => {
     poppinsSemiBold: Poppins_600SemiBold,
   });
 
+  useEffect(() => {
+    async function fetchResources() {
+      if (!fontsLoaded) {
+        return SplashScreen.preventAutoHideAsync();
+      }
+
+      return SplashScreen.hideAsync();
+    }
+
+    fetchResources().catch(() => undefined);
+  }, [fontsLoaded]);
+
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return null;
   }
 
   return (
