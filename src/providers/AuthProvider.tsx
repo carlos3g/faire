@@ -1,6 +1,13 @@
-/* eslint-disable react/jsx-no-constructed-context-values */
 import { User } from 'firebase/auth';
-import { createContext, Dispatch, FC, useState, SetStateAction } from 'react';
+import {
+  createContext,
+  Dispatch,
+  FC,
+  useState,
+  SetStateAction,
+  PropsWithChildren,
+  useMemo,
+} from 'react';
 
 type IUser = User | null;
 interface IAuthContext {
@@ -13,14 +20,11 @@ const AuthContext = createContext<IAuthContext>({
   setUser: () => undefined,
 });
 
-const AuthProvider: FC = ({ children }) => {
+const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState<IUser>(null);
+  const values = useMemo(() => ({ user, setUser }), [user]);
 
-  return (
-    <AuthContext.Provider value={{ user, setUser }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
 export { AuthContext, AuthProvider };

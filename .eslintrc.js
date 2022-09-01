@@ -38,5 +38,12 @@ module.exports = {
     'react/style-prop-object': 0,
     'import/prefer-default-export': 0,
     '@typescript-eslint/unbound-method': 0,
+    'global-require': 0,
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: false,
+      },
+    ],
   },
 };
