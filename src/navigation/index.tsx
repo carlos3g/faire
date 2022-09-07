@@ -1,10 +1,12 @@
-import { AuthContext } from '@providers';
+import { FC, useContext, useEffect } from 'react';
+
 import { NavigationContainer, Theme } from '@react-navigation/native';
-import { auth } from '@services';
-import { colors } from '@styles';
 import { onAuthStateChanged } from 'firebase/auth';
 import { tint } from 'polished';
-import { FC, useContext, useEffect } from 'react';
+
+import { AuthContext } from '@providers';
+import { auth } from '@services';
+import { colors } from '@styles';
 import AppNavigator from './AppNavigator';
 import AuthNavigator from './AuthNavigator';
 

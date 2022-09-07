@@ -1,15 +1,15 @@
-import { User } from 'firebase/auth';
 import {
   createContext,
   Dispatch,
   FC,
-  useState,
-  SetStateAction,
   PropsWithChildren,
+  SetStateAction,
   useMemo,
+  useState,
 } from 'react';
 
-type IUser = User | null;
+import { IUser } from '@types';
+
 interface IAuthContext {
   user: IUser;
   setUser: Dispatch<SetStateAction<IUser>>;

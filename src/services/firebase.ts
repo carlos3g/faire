@@ -17,6 +17,7 @@ const firebaseConfig: FirebaseOptions = {
 
 if (getApps().length < 1) {
   const app = initializeApp(firebaseConfig);
+
   initializeAuth(app, {
     persistence: getReactNativePersistence(AsyncStorage),
   });

@@ -1,7 +1,9 @@
 import { TextInputProps } from 'react-native';
+
 import styled from 'styled-components/native';
-import { colors, typography } from '@styles';
 import { shade, tint } from 'polished';
+
+import { colors, typography } from '@styles';
 
 interface IStyledTextInputProps {
   focused?: boolean;

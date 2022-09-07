@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { Container, Text } from './styles';
 
 const Account: FC = () => (

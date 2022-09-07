@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
-import { colors, typography } from '@styles';
 import { tint } from 'polished';
+
+import { colors, typography } from '@styles';
 
 type ButtonProps = { primary?: boolean };
 type LabelProps = { primary?: boolean };

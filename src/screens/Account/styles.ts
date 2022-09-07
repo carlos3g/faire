@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+
 import { colors, typography } from '@styles';
 
 export const Container = styled.View`

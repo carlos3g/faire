@@ -1,7 +1,9 @@
-import styled from 'styled-components/native';
 import { KeyboardAvoidingViewProps } from 'react-native';
-import { colors, typography } from '@styles';
+
 import { shade } from 'polished';
+import styled from 'styled-components/native';
+
+import { colors, typography } from '@styles';
 
 export const Container = styled.KeyboardAvoidingView.attrs(
   (): KeyboardAvoidingViewProps => ({

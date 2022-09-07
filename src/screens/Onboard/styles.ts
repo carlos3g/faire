@@ -1,7 +1,9 @@
-import styled from 'styled-components/native';
-import { ScrollViewProps, ImageProps } from 'react-native';
-import { colors, typography } from '@styles';
+import { ImageProps, ScrollViewProps } from 'react-native';
+
 import { shade } from 'polished';
+import styled from 'styled-components/native';
+
+import { colors, typography } from '@styles';
 
 export const Container = styled.ScrollView.attrs(
   (): ScrollViewProps => ({

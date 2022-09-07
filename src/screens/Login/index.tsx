@@ -1,16 +1,18 @@
-import { Button, Input } from '@components';
+import { FC, useCallback, useState } from 'react';
+
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
+import { Button, Input } from '@components';
 import { auth } from '@services';
 import { AuthStackParams } from '@types';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { FC, useCallback, useState } from 'react';
 import { Container, SignUpText, SubTitle, Text, Title } from './styles';
 
-type Props = NativeStackScreenProps<AuthStackParams, 'Login'>;
+type LoginProps = NativeStackScreenProps<AuthStackParams, 'Login'>;
 
-const Login: FC<Props> = ({ navigation }) => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+const Login: FC<LoginProps> = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { navigate } = navigation;
 
   const handleLogin = useCallback(async () => {

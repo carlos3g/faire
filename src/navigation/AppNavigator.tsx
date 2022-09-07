@@ -1,13 +1,15 @@
+import { FC } from 'react';
+
 import { Ionicons } from '@expo/vector-icons';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import { RouteProp } from '@react-navigation/native';
+
 import { Account, Tasks } from '@screens';
 import { colors, typography } from '@styles';
 import { TabsParams } from '@types';
-import { FC } from 'react';
 
 type ScreenOptions = (props: {
   route: RouteProp<TabsParams>;

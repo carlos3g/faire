@@ -1,8 +1,10 @@
-import { db } from '@services';
-import { ITask } from '@types';
+import { FC, useCallback } from 'react';
+
 import { User } from 'firebase/auth';
 import { deleteDoc, doc } from 'firebase/firestore';
-import { FC, useCallback } from 'react';
+
+import { db } from '@services';
+import { ITask } from '@types';
 import { CheckBox, Container, PriorityIndicator, Title } from './styles';
 
 type TaskCardProps = {

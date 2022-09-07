@@ -1,6 +1,8 @@
-import { colors, typography } from '@styles';
 import { Pressable } from 'react-native';
+
 import styled from 'styled-components/native';
+
+import { colors, typography } from '@styles';
 
 export const Container = styled(Pressable)`
   align-items: center;

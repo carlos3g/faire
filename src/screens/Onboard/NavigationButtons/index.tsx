@@ -1,7 +1,9 @@
+import { FC } from 'react';
+
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 import { AuthStackParams } from '@types';
-import { FC } from 'react';
 import { Button, Container, Label } from './styles';
 
 type NavigationProp = NativeStackNavigationProp<AuthStackParams, 'Onboard'>;

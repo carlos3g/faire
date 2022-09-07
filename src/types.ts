@@ -1,3 +1,5 @@
+import { User } from 'firebase/auth';
+
 export type AuthStackParams = {
   Onboard: undefined;
   Login: undefined;
@@ -15,3 +17,5 @@ export interface ITask {
   priority: 0 | 1 | 2;
   title: string;
 }
+
+export type IUser = User | null;

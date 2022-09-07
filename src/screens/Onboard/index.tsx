@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import NavigationButtons from './NavigationButtons';
 import { Banner, Container, Text, Title } from './styles';
 

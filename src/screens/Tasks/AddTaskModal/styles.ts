@@ -1,6 +1,7 @@
-import { colors, typography } from '@styles';
 import { tint } from 'polished';
 import styled from 'styled-components/native';
+
+import { colors, typography } from '@styles';
 
 export const Overlay = styled.Pressable`
   position: absolute;

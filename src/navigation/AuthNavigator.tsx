@@ -1,8 +1,10 @@
+import { FC } from 'react';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { Login, Onboard, SignUp } from '@screens';
 import { colors } from '@styles';
 import { AuthStackParams } from '@types';
-import { FC } from 'react';
 
 const { Navigator, Screen } = createNativeStackNavigator<AuthStackParams>();
 

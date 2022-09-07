@@ -6,12 +6,12 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FC, useCallback, useState } from 'react';
 import { Container, LoginText, SubTitle, Text, Title } from './styles';
 
-type Props = NativeStackScreenProps<AuthStackParams, 'SignUp'>;
+type SignUpProps = NativeStackScreenProps<AuthStackParams, 'SignUp'>;
 
-const SignUp: FC<Props> = ({ navigation }) => {
-  const [nome, setNome] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+const SignUp: FC<SignUpProps> = ({ navigation }) => {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { navigate } = navigation;
 
   const handleSignUp = useCallback(async () => {
