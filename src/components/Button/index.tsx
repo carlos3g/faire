@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { FC } from 'react';
 import { PressableProps } from 'react-native';
 

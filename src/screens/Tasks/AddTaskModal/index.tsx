@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { FC, useCallback, useState } from 'react';
 import { Modal, ModalProps } from 'react-native';
 

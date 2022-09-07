@@ -31,6 +31,12 @@ module.exports = {
         namedComponents: 'arrow-function',
       },
     ],
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: false,
+      },
+    ],
     'react/jsx-uses-react': 0,
     'react/react-in-jsx-scope': 0,
     'import/extensions': 0,
@@ -39,11 +45,6 @@ module.exports = {
     'import/prefer-default-export': 0,
     '@typescript-eslint/unbound-method': 0,
     'global-require': 0,
-    '@typescript-eslint/no-misused-promises': [
-      'error',
-      {
-        checksVoidReturn: false,
-      },
-    ],
+    'react/jsx-props-no-spreading': 0,
   },
 };

@@ -1,9 +1,11 @@
-import { Button, Input } from '@components';
+import { FC, useCallback, useState } from 'react';
+
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+
+import { Button, Input } from '@components';
 import { auth } from '@services';
 import { AuthStackParams } from '@types';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { FC, useCallback, useState } from 'react';
 import { Container, LoginText, SubTitle, Text, Title } from './styles';
 
 type SignUpProps = NativeStackScreenProps<AuthStackParams, 'SignUp'>;

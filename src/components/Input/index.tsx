@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { FC, useState } from 'react';
 import { TextInputProps } from 'react-native';
 
